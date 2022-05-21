@@ -4,7 +4,20 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-您好！！！！
+<br>
+您好,今天是{{ var }}，尊敬的会员<br/>
+今天值班的有：<br/>
+{% for data in list %}
+    <li>{{ data }}</li>   <!--用大括号和百分号括起来的是控制结构，还有if-->
+{%endfor%}
+任务：<br/>    <!--展示如何在html打印表格，以及如何迭代-->
+    <table border="1">
+        {% for key,value in task.items() %} <!--[(key,value),(key,value),(key,value)]-->
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
